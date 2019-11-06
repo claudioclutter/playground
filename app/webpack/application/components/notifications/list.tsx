@@ -13,6 +13,6 @@ export const List: React.FC<{
       notifications
         .filter(({ deleted }) => !deleted)
         .map((notification) => <Entry key={notification.id} notification={notification} />)}
-    {notifications && !notifications.some(({ deleted }) => !deleted) && <Empty />}
+    {notifications?.some(({ deleted }) => !deleted) && <Empty />}
   </>
 );
